@@ -1,0 +1,14 @@
+:root {
+    --black-bg: #3F3F3F;
+    --white-text: #FFF;
+    --logo-green: #13968b;
+    --grey: #CCC;
+}
+
+// Reset CSS
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

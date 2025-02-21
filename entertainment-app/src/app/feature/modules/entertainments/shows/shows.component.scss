@@ -1,0 +1,63 @@
+.section-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    float: left;
+    margin-left: 10rem
+}
+
+.card {
+    float: left;
+    width: 12%;
+    height: 120px;
+    margin-right: 6rem;
+    margin-top: 8rem;
+    border: 1px solid var(--logo-green);
+    margin-bottom: 12rem;
+    cursor: pointer;
+}
+
+.card-actions {
+    background: var(--logo-green);
+    width: 13.2rem;
+    height: 50px;
+    margin-top: -4px;
+}
+
+.card-title {
+    text-align: center;
+    padding-top: 1rem;
+    color: var(--white-text);
+    font-size: 18px;
+}
+
+.card-fav {
+    margin-top: 0.9rem;
+    background: var(--logo-green);
+    height: 40px;
+}
+
+.card-fav {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+}
+
+.ent-fav-icon {
+    color: var(--grey);
+}
+
+.fav-right {
+    display: flex;
+}
+
+.ent-rating-val {
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+}
+
+.section-header {
+    padding-top: 4rem;
+    position: absolute;
+    font-size: 38px;
+}

@@ -1,0 +1,34 @@
+<div class="section">
+    <div class="section-container">
+        <div class="section-header">
+            <div class="section-heading">
+                <div class="section-heading-text">
+                    Shows
+                </div>
+            </div>
+        </div>
+        <div class="section-body">
+            <ng-container *ngFor="let show of showLists">
+                <div class="card">
+                    <div class="card-img">
+                        <img [src]="show.imgPath" />
+                    </div>
+                    <div class="card-actions">
+                        <div class="card-title">{{show.name}}</div>
+                        <div class="card-fav">
+                            <div class="fav-left">
+                                <mat-icon class="ent-fav-icon">favorite_border</mat-icon>
+                            </div>
+                            <div class="fav-right">
+                                <mat-icon class="ent-fav-icon">star_half</mat-icon>
+                                <div class="ent-rating-val">{{show.ratings}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+
+    </div>
+</div>
