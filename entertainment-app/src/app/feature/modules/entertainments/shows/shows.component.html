@@ -9,7 +9,7 @@
         </div>
         <div class="section-body">
             <ng-container *ngFor="let show of showLists">
-                <div class="card">
+                <div (click)="viewShowDetails(show)" class="card">
                     <div class="card-img">
                         <img [src]="show.imgPath" />
                     </div>

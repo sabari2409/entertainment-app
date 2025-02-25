@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RestApiService } from "src/app/core/rest-api.service";
 import { Shows } from "../entertainment.model";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -13,7 +14,8 @@ export class ShowsComponent implements OnInit {
     showLists: any = [];
 
     constructor(
-        private restApi: RestApiService
+        private restApi: RestApiService,
+        private router: Router
     ) {
 
     }
@@ -24,6 +26,11 @@ export class ShowsComponent implements OnInit {
             console.log(res);
             this.showLists = res;
         });
+    }
+
+
+    viewShowDetails(show: Shows) {
+        this.router.navigateByUrl('ent/shows/' + show.id + "/" + show.name);
     }
 
 }

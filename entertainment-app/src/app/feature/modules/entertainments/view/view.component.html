@@ -1,0 +1,57 @@
+<div class="view-container">
+    <div class="view-right">
+        <mat-tab-group (selectedTabChange)="tabClick($event)">
+            <mat-tab label="main">
+                Reacher follows Jack Reacher, a veteran military police investigator who has just recently entered
+                civilian life. Reacher is a drifter, carrying no phone and the barest of essentials as he travels the
+                country and explores the nation he once served. When Reacher arrives in the small town of Margrave,
+                Georgia, he finds a community grappling with its first homicide in 20 years. The cops immediately arrest
+                him and eyewitnesses claim to place Reacher at the scene of the crime. While he works to prove his
+                innocence, a deep-seated conspiracy begins to emerge, one that will require Reacher's keen mind and
+                hard-hitting fists to deal with. One thing above all is for sure: They picked the wrong guy to take the
+                fall
+            </mat-tab>
+            <mat-tab label="Episodes">
+                <ng-container *ngTemplateOutlet="renderTable"></ng-container>
+            </mat-tab>
+            <mat-tab label="Seasons">
+                <ng-container *ngFor="let season of seasonDetails">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>{{season}}</mat-card-content>
+                    </mat-card>
+                </ng-container>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+
+<ng-template #renderTable>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="episodeId">
+            <th mat-header-cell *matHeaderCellDef>Episode Id</th>
+            <td mat-cell *matCellDef="let element">{{element.episodeId}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="episodeNo">
+            <th mat-header-cell *matHeaderCellDef>Episode No</th>
+            <td mat-cell *matCellDef="let element">{{element.episodeNo}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="episodeName">
+            <th mat-header-cell *matHeaderCellDef>Episode Name</th>
+            <td mat-cell *matCellDef="let element">{{element.episodeName}}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="episodeScore">
+            <th mat-header-cell *matHeaderCellDef>Score</th>
+            <td mat-cell *matCellDef="let element">{{element.episodeScore}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="tableCols"></tr>
+        <tr mat-row *matRowDef="let row; columns: tableCols;"></tr>
+    </table>
+</ng-template>
